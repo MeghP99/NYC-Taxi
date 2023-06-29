@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [date_key]\n,[date]\n,[year]\n,[month]\n,[day]\n,[day_name]\n,[day_of_year]\n,[week_of_month]\n,[week_of_year]\n,[month_name]\n,[year_month]\n,[year_week]\n FROM [BRONZE].[calender]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "nyc_taxi_ldw",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
