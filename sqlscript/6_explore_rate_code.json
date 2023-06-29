@@ -1,0 +1,20 @@
+{
+	"name": "6_explore_rate_code",
+	"properties": {
+		"folder": {
+			"name": "nyc-taxi/discovery"
+		},
+		"content": {
+			"query": "SELECT rate_code_id, rate_code\n FROM   OPENROWSET(\n        BULK 'rate_code.json',\n        DATA_SOURCE = 'nyc_taxi_data_raw',\n        FORMAT = 'csv',\n        FIELDQUOTE = '0x0b',\n        FIELDTERMINATOR ='0x0b',\n        ROWTERMINATOR = '0x0b'\n    )\n    WITH (\n        jsondoc varchar(MAX) \n    ) AS [rate_code]\n    CROSS APPLY OPENJSON(jsondoc)\n    WITH\n    (\n        rate_code_id smallint,\n        rate_code nvarchar(MAX) \n    )\n   \n    ",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "nyc_taxi_discovery",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

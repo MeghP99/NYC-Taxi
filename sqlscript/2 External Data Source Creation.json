@@ -1,0 +1,20 @@
+{
+	"name": "2 External Data Source Creation",
+	"properties": {
+		"folder": {
+			"name": "nyc-taxi/ldw"
+		},
+		"content": {
+			"query": "CREATE EXTERNAL DATA SOURCE nyc_taxi\nWITH\n  -- Please note the abfss endpoint when your account has secure transfer enabled\n  ( LOCATION = 'https://syanpsecursedlg2.dfs.core.windows.net/nyc-taxi-data'\n  ) ;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "nyc_taxi_ldw",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
