@@ -1,16 +1,16 @@
 {
-	"name": "7 Create Silver Calender",
+	"name": "7 Create Silver Calender TripType Vendor",
 	"properties": {
 		"folder": {
 			"name": "nyc-taxi/ldw"
 		},
 		"content": {
-			"query": "CREATE EXTERNAL TABLE SILVER.calender WITH  (\n    DATA_SOURCE = nyc_taxi,  \n    LOCATION = 'SILVER/taxi_zone',\n    FILE_FORMAT = parquet_file_format\n)\nAS \nSELECT *\n  FROM BRONZE.taxi_zone;",
+			"query": "CREATE EXTERNAL TABLE SILVER.calender WITH  (\n    DATA_SOURCE = nyc_taxi,  \n    LOCATION = 'SILVER/calender',\n    FILE_FORMAT = parquet_file_format\n)\nAS \nSELECT *\n  FROM BRONZE.calendar;\n\n\n\n  CREATE EXTERNAL TABLE SILVER.trip_type WITH  (\n    DATA_SOURCE = nyc_taxi,  \n    LOCATION = 'SILVER/trip_type',\n    FILE_FORMAT = parquet_file_format\n)\nAS \nSELECT *\n  FROM BRONZE.trip_type;\n\n\n  CREATE EXTERNAL TABLE SILVER.vendor WITH  (\n    DATA_SOURCE = nyc_taxi,  \n    LOCATION = 'SILVER/vendor',\n    FILE_FORMAT = parquet_file_format\n)\nAS \nSELECT *\n  FROM BRONZE.vendor;\n",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"databaseName": "master",
+				"databaseName": "nyc_taxi_ldw",
 				"poolName": "Built-in"
 			},
 			"resultLimit": 5000
