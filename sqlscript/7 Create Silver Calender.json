@@ -1,0 +1,20 @@
+{
+	"name": "7 Create Silver Calender",
+	"properties": {
+		"folder": {
+			"name": "nyc-taxi/ldw"
+		},
+		"content": {
+			"query": "CREATE EXTERNAL TABLE SILVER.calender WITH  (\n    DATA_SOURCE = nyc_taxi,  \n    LOCATION = 'SILVER/taxi_zone',\n    FILE_FORMAT = parquet_file_format\n)\nAS \nSELECT *\n  FROM BRONZE.taxi_zone;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,11 +1,11 @@
 {
-	"name": "SQL script 3",
+	"name": "6 Create Silver taxi_zone",
 	"properties": {
 		"folder": {
 			"name": "nyc-taxi/ldw"
 		},
 		"content": {
-			"query": "CREATE EXTERNAL TABLE WITH (\n\n)",
+			"query": "CREATE EXTERNAL TABLE SILVER.taxi_zone WITH  (\n    DATA_SOURCE = nyc_taxi,  \n    LOCATION = 'SILVER/taxi_zone',\n    FILE_FORMAT = parquet_file_format\n)\nAS \nSELECT *\n  FROM BRONZE.taxi_zone;",
 			"metadata": {
 				"language": "sql"
 			},
