@@ -1,0 +1,24 @@
+{
+	"name": "Retail_m90",
+	"properties": {
+		"Name": "Retail_m90",
+		"EntityType": "DATABASE",
+		"Description": "",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Retail\",\"Version\":\"1.3.0\"}}}",
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://ws-container@syanpsecursedlg2.dfs.core.windows.net/Retail_m90",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "synapse-ws-112-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}
